@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+@theme {
+  --color-encoway: #1d76e2;
+}
