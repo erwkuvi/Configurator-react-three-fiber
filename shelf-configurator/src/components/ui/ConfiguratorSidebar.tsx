@@ -41,7 +41,7 @@ function ConfiguratorSidebar() {
 			<div className="flex-1 overflow-y-auto p-6">
 				{/* Dimensions Section */}
 				<section className="mb-8">
-					<h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Dimensions</h2>
+					<h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Dimensions (cm)</h2>
 					<SliderField
 						label="Height"
 						value={config.height}
@@ -63,8 +63,9 @@ function ConfiguratorSidebar() {
 						max={60}
 						onChange={(val) => updateConfig({depth: val})}
 					/>
+					<h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Structural density</h2>
 					<SliderField
-						label="Shelves"
+						label="Number of Shelves"
 						value={config.shelfCount}
 						min={1}
 						max={3}
@@ -74,7 +75,7 @@ function ConfiguratorSidebar() {
 
 				{/* Materials Section */}
 				<section className="mb-8">
-					<h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Finishes</h2>
+					<h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Material Finishes</h2>
 					<div className="grid grid-cols-2 gap-3">
 						{MATERIALS.map((mat) => {
 							const isActive = config.material === mat.id;
