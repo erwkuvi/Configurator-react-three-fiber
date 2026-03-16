@@ -4,9 +4,11 @@ import { ContactShadows, Environment, OrbitControls, Loader } from '@react-three
 import ConfiguratorSidebar from './components/ui/ConfiguratorSidebar';
 import ParametricShelf from './components/3d/ParametricShelf';
 import { Suspense } from 'react';
+import { useConfigStore } from './store/useConfigStore';
 
 
 function App() {
+	const config = useConfigStore((state) => state.config);
 
 	return (
 		<div className="w-screen h-screen bg-neutral-100 flex overflow-hidden">
@@ -36,13 +38,13 @@ function App() {
 						makeDefault
 						minPolarAngle={0}
 						maxPolarAngle={Math.PI / 2 + 0.1}
-						target={[0, 100, 0]}
+						target={[0, config.height / 2, 0]}
 					/>
 				</Canvas>
 				<Loader
-					containerStyles={{ background: '#f5f5f5' }} // Match your app's theme
+					containerStyles={{ background: '#f5f5f5' }} 
 					innerStyles={{ width: '300px' }}
-					barStyles={{ background: '#3b82f6' }} // Tailwind blue-500
+					barStyles={{ background: '#3b82f6' }} 
 					dataStyles={{ color: '#1f2937', fontSize: '14px', fontFamily: 'sans-serif' }}
 					dataInterpolation={(p) => `Loading assets... ${p.toFixed(0)}%`}
 				/>
