@@ -8,7 +8,6 @@ export function generateShelfParts(config: ShelfConfig): ShelfPart[] {
 	// Common dimensions
 	const innerWidth = width - 2 * thickness;
 
-	const isverticalDivider = false;
 
 	// Left Side
 	parts.push({

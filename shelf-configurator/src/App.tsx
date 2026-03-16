@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { ContactShadows, Environment, OrbitControls } from '@react-three/drei';
 import ConfiguratorSidebar  from './components/ui/ConfiguratorSidebar';
 import ParametricShelf from './components/3d/ParametricShelf';
+import { Suspense } from 'react';
 
 function App() {
 
@@ -19,8 +20,11 @@ function App() {
           <ambientLight intensity={0.5} />
           <directionalLight position={[200, 200, 100]} intensity={1.0} castShadow />
           <Environment preset="apartment" />
+					<Suspense fallback={null}>
 
           <ParametricShelf /> 
+
+					</Suspense>
 
           <ContactShadows 
             position={[0, 0, 0]} 
