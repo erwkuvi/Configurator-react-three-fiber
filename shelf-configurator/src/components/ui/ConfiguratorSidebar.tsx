@@ -22,8 +22,10 @@ const MATERIALS: MaterialOption[] = [
 function ConfiguratorSidebar() {
 
 	const config = useConfigStore((state) => state.config);
-	const updateConfig = useConfigStore((state) => state.updateConfig);
 	const resetConfig = useConfigStore((state) => state.resetConfig);
+	const updateConfig = useConfigStore((state) => state.updateConfig);
+	console.log(config.thickness);
+
 
 	return (
 		<aside className="w-80 h-screen flex flex-col bg-white border-r border-slate-200 font-sans shadow-sm z-10">
@@ -70,6 +72,13 @@ function ConfiguratorSidebar() {
 						min={1}
 						max={3}
 						onChange={(val) => updateConfig({shelfCount: val})}
+					/>
+					<SliderField
+						label="Thickness"
+						value={config.thickness}
+						min={1}
+						max={3}
+						onChange={(val) => updateConfig({thickness: val})}
 					/>
 				</section>
 

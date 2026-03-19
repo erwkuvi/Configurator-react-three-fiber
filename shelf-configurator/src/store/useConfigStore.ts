@@ -6,7 +6,7 @@ const DEFAULT_CONFIG: ShelfConfig = {
   height: 150,
   depth: 40,
   shelfCount: 2,
-  thickness: 2,
+  thickness: 3,
   material: 'natural_wood',
 };
 

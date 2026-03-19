@@ -22,9 +22,14 @@ const SliderField = ({ label, value, min, max, onChange }: Props) => (
 			min={min}
 			max={max}
 			value={value}
-			onChange={(e) => onChange(Number(e.target.value))}
-			className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#1d76e2]"
+			onChange={(e) => {
+				console.log(label, e.target.value)
+
+				onChange(Number(e.target.value))
+			}}
+			className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-encoway]"
 		/>
+		
 	</div>
 );
 

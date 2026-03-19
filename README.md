@@ -66,4 +66,7 @@ npm run dev
 
 ```
 
+![Materials changing](./assets/materialsChange.gif)
+![Size changing](./assets/sizeChange.gif)
+
 

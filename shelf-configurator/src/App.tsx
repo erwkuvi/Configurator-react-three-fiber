@@ -20,7 +20,7 @@ function App() {
 			<main className="flex-1 relative">
 				<Canvas shadows camera={{ position: [150, 150, 250], fov: 45 }}>
 					<ambientLight intensity={0.5} />
-					<directionalLight position={[200, 200, 100]} intensity={1.0} castShadow />
+					<directionalLight position={[200, 100, 100]} intensity={1.0} castShadow />
 
 					<Suspense fallback={null}>
 						<Environment preset="apartment" />
@@ -29,9 +29,9 @@ function App() {
 
 					<ContactShadows
 						position={[0, 0, 0]}
-						opacity={0.6}
+						opacity={1.0}
 						scale={200}
-						blur={2}
+						blur={10}
 						far={10}
 					/>
 					<OrbitControls
